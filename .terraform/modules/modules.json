@@ -1,0 +1,1 @@
+{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"acr","Source":"./modules/acr","Dir":"modules/acr"},{"Key":"mysql","Source":"./modules/mysql","Dir":"modules/mysql"},{"Key":"webapp","Source":"./modules/webapp","Dir":"modules/webapp"}]}
