@@ -279,6 +279,34 @@ ttled for subscription 5f13b879-49c5-44a1-8328-0b128ab8b9a2. Please contact supp
 
 ---
 
+## ⚙️ Choix techniques
+
+### 1. Infrastructure décrite avec Terraform (IaC)
+
+Le déploiement est automatisé avec Terraform pour garantir une infrastructure versionnée, reproductible et modulaire.
+
+### 2. Utilisation de modules personnalisés
+
+Les ressources sont organisées par modules (`acr/`, `webapp/`, `mysql/`) pour assurer une séparation claire et la réutilisabilité du code.
+
+### 3. Personnalisation de l’image WordPress
+
+L’image Docker est basée sur `wordpress:latest`, avec ajout d’un thème ou logo personnalisé, et est poussée dans ACR.
+
+### 4. Web App Linux avec Docker
+
+La Web App consomme directement l’image stockée dans ACR grâce à l’authentification par **identité managée (MSI)**.
+
+### 5. Base de données MySQL sécurisée
+
+Le serveur MySQL est configuré pour n’autoriser l’accès qu’à la Web App (via règles IP ou intégration réseau).
+
+### 6. Support multi-environnements
+
+Grâce à l’utilisation de fichiers `.tfvars` et de variables dynamiques, il est possible de déployer séparément les environnements `dev` et `prod`.
+
+---
+
 ## 💬 Problèmes rencontrés
 
 - **Terraform modules externes non accessibles** : remplacement par une déclaration directe du Resource Group.
