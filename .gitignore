@@ -2,9 +2,11 @@
 .terraform/
 **/.terraform/
 
-# Terraform state files
+# Terraform state files (contain secrets)
 *.tfstate
-*.tfstate.backup
+*.tfstate.*
+terraform.tfstate
+terraform.tfstate.backup
 
 # Crash log
 crash.log
